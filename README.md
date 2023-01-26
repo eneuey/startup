@@ -7,3 +7,5 @@ Things I learned:
 I learned how to create a repo and how to push and pull from it, as well as how to resolve merge conflicts! Super cool!
 
 I like beans
+Help me
+
