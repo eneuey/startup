@@ -19,3 +19,4 @@ ssh -i NeuenKeyAws.pem ubuntu@3.132.185.117
 
 Notes From Simon:
 Through doing the simon deliverable I gained a much better understanding of how html works. I few of the elements I learned more about are the list, table, and icon element that shows up on the chrome tab. 
+By adding css to simon I have learned how powerful bootstrap is. I will definitly use it a lot in my own start up project.
