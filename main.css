@@ -13,6 +13,15 @@ body {
   .button-holder {
     padding: 7px;
   }
+  .play-button-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #play-button{
+    width: 140px;
+    margin: 7px;
+  }
   header {
     flex: 0 80px;
   }
@@ -28,6 +37,83 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+  }
+  main.game {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+  .player-info {
+    display: flex;
+    flex: 1;
+  }
+  .info-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: darkgray;
+    margin: 20px;
+    height: 70vh;
+    width: 300%;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .white-large {
+    height: 120px;
+    width: 120px;
+    border-radius: 100px;
+    background-color: rgb(161, 211, 255);
+    border: medium solid rgb(106, 106, 106);
+    margin: 5px;
+  }
+  .white-medium {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    background-color: rgb(161, 211, 255);
+    border: medium solid rgb(106, 106, 106);
+    margin: 5px;
+  }
+  .white-small {
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
+    background-color: rgb(161, 211, 255);
+    border: medium solid rgb(106, 106, 106);
+    margin: 5px;
+  }
+  .black-large {
+    height: 120px;
+    width: 120px;
+    border-radius: 100px;
+    color: white;
+    background-color: rgb(36, 123, 43);
+    border: medium solid rgb(0, 0, 0);
+    margin: 5px;
+  }
+  .black-medium {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    color: white;
+    background-color: rgb(36, 123, 43);
+    border: medium solid rgb(0, 0, 0);
+    margin: 5px;
+  }
+  .black-small {
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
+    color: white;
+    background-color: rgb(36, 123, 43);
+    border: medium solid rgb(0, 0, 0);
+    margin: 5px;
+  }
+  .board-holder {
+    display: flex;
+    flex: 2;
+    justify-content: center;
   }
   menu {
     flex: 1;
@@ -63,7 +149,7 @@ body {
 
 
   
-  @media (max-height: 600px) {
+  @media (max-height: 500px) {
     header {
       display: none;
     }
