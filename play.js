@@ -183,10 +183,14 @@ class Game {
             else if(Object.keys(this.board[index]).length) {
                 let squareData = this.board[index];
                 let keysList = Object.keys(squareData);
-                this.swap.location = index;
-                this.swap.id = num;
-                this.swap.type = keysList[keysList.length - 1];
-                this.swap.piece = squareData[keysList[keysList.length - 1]];
+                let piece = squareData[keysList[keysList.length - 1]];
+                let color = piece.className.substring(0, 5);
+                if(color === "white") {
+                    this.swap.location = index;
+                    this.swap.id = num;
+                    this.swap.type = keysList[keysList.length - 1];
+                    this.swap.piece = piece;
+                }
                 //console.log(this.swap);
             }
         }
@@ -218,10 +222,15 @@ class Game {
             else if(Object.keys(this.board[index]).length) {
                 let squareData = this.board[index];
                 let keysList = Object.keys(squareData);
-                this.swap.location = index;
-                this.swap.id = num;
-                this.swap.type = keysList[keysList.length - 1];
-                this.swap.piece = squareData[keysList[keysList.length - 1]];
+                let piece = squareData[keysList[keysList.length - 1]];
+                let color = piece.className.substring(0, 5);
+                if(color === "black") {
+                    this.swap.location = index;
+                    this.swap.id = num;
+                    this.swap.type = keysList[keysList.length - 1];
+                    this.swap.piece = piece;
+                }
+                
                 //console.log(this.swap);
             }
         }
