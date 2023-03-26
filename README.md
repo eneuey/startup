@@ -9,6 +9,11 @@ I learned how to create a repo and how to push and pull from it, as well as how 
 ![20230127_134614](https://user-images.githubusercontent.com/122322676/215194023-9445ce16-75c3-43d5-8e69-685200cc5bfd.jpg)
 
 
+NOTES FROM SIMON SERVICE:
+By studying the code for the simon service I have learned how to manipulate the DOM using data obtained through a fetch command, like what is done in the scores.js file. By studying the index.js file I now also have a better idea of how all the parts come together to make a functional web service.
+
+
+
 Elevator Pitch:
 Have you every wanted to enjoy a strategy game with your friends? Games like tic tac toe are too simple, and games like chess have too steep of a learning curve, but gobblet is the perfect balance of both! My startup application will allow you and your friends to play gobblet any time any where!
 Key Features:
