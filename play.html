@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="main.css" />
 
+    <script defer src="play.js"></script>
+
     <!-- Include bootstrap CSS framework -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -39,21 +41,33 @@
     <main class="game">
       <div class="player-info">
         <div class="info-container">
-            <h6>Player Name: (player name)</h6>
-            <button class="white-large">Large Goblet: x2</button>
-            <button class="white-medium">Medium Goblet: x2</button>
-            <button class="white-small">Small Goblet: x2</button>
+            <h6>Player Name: <span class="player-name">unknown</span></h6>
+            <button class="white-large" id="white" onclick="game.selectLargeWhite()">Large Goblet: x<span class="LWCounter"></span></button>
+            <button class="white-medium" id="white" onclick="game.selectMediumWhite()">Medium Goblet: x<span class="MWCounter"></span></button>
+            <button class="white-small" id="white" onclick="game.selectSmallWhite()">Small Goblet: x<span class="SWCounter"></span></button>
+            <p class="turnSelector" id="whiteTurn">Your Turn!</p>
         </div>    
       </div>
       <div class="board-holder">
-        <p>test</p>
+        <div class="board">
+          <button class="square" id="zero" onclick="game.placeInSquareZero()"></button>
+          <button class="square" id="one" onclick="game.placeInSquareOne()"></button>
+          <button class="square" id="two" onclick="game.placeInSquareTwo()"></button>
+          <button class="square" id="three" onclick="game.placeInSquareThree()"></button>
+          <button class="square" id="four" onclick="game.placeInSquareFour()"></button>
+          <button class="square" id="five" onclick="game.placeInSquareFive()"></button>
+          <button class="square" id="six" onclick="game.placeInSquareSix()"></button>
+          <button class="square" id="seven" onclick="game.placeInSquareSeven()"></button>
+          <button class="square" id="eight" onclick="game.placeInSquareEight()"></button>
+        </div>
       </div>
       <div class="player-info">
         <div class="info-container">
-            <h6>Opponent Name: (player name)'s Friend</h6>
-            <button class="black-large" >Large Goblet: x2</button>
-            <button class="black-medium">Medium Goblet: x2</button>
-            <button class="black-small">Small Goblet: x2</button>
+            <h6>Opponent Name: <span class="player-name">unknown</span>'s Friend</h6>
+            <button class="black-large" id="black" onclick="game.selectLargeBlack()">Large Goblet: x<span class="LBCounter"></span></button>
+            <button class="black-medium" id="black" onclick="game.selectMediumBlack()">Medium Goblet: x<span class="MBCounter"></span></button>
+            <button class="black-small" id="black" onclick="game.selectSmallBlack()">Small Goblet: x<span class="SBCounter"></span></button>
+            <p class="turnSelector" id="blackTurn"></p>
         </div>
       </div>
     </main>

@@ -38,6 +38,35 @@ body {
     align-items: center;
     justify-content: space-around;
   }
+  .turnSelector {
+    background-color: yellow;
+    border-radius: 7px;
+    padding: 1px;
+    margin: 10px;
+
+  }
+  .board {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(41, 41, 43);
+    margin: 20px;
+    height: 530px;
+    width: 530px;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .square {
+    background-color: darkgrey;
+    border-radius: 10px;
+    height: 150px;
+    width: 150px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   main.game {
     display: flex;
     flex-direction: row;
@@ -54,7 +83,7 @@ body {
     align-items: center;
     background-color: darkgray;
     margin: 20px;
-    height: 70vh;
+    height: 75vh;
     width: 300%;
     border-radius: 10px;
     padding: 5px;
@@ -142,14 +171,28 @@ body {
   }
   
   .player-name {
-    color: rgb(118, 190, 210);
+    color: rgb(0, 0, 0);
   }
   
   
 
-
+  #white:hover {
+    background-color: rgb(120, 203, 255);
+    box-shadow: 0px 0px 10px rgb(101, 101, 101);
+  }
+  #white:active{
+    background-color: rgb(111, 187, 234);
+  }
+  #black:hover {
+    background-color: rgb(5, 107, 5);
+    box-shadow: 0px 0px 10px rgb(101, 101, 101);
+  }
+  #black:active {
+    xbackground-color: rgb(203, 179, 0);
+    background-color: rgb(4, 88, 4);
+  }
   
-  @media (max-height: 500px) {
+  @media (max-height: 600px) {
     header {
       display: none;
     }
