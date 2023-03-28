@@ -12,6 +12,9 @@ I learned how to create a repo and how to push and pull from it, as well as how 
 NOTES FROM SIMON SERVICE:
 By studying the code for the simon service I have learned how to manipulate the DOM using data obtained through a fetch command, like what is done in the scores.js file. By studying the index.js file I now also have a better idea of how all the parts come together to make a functional web service.
 
+NOTES FROM SIMON DB:
+From doing this assignment I have learned how to set envirnment variables on my computer and in my production environment. By studing the code I also learned how to interact with a mongo data base through the node package. I was suprised by how simple it looked! :)
+
 
 
 Elevator Pitch:
