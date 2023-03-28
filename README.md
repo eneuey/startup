@@ -15,6 +15,9 @@ By studying the code for the simon service I have learned how to manipulate the 
 NOTES FROM SIMON DB:
 From doing this assignment I have learned how to set envirnment variables on my computer and in my production environment. By studing the code I also learned how to interact with a mongo data base through the node package. I was suprised by how simple it looked! :)
 
+NOTES FROM SIMON LOGIN:
+By studying the code I have been able to gain a general idea of the process used to authenticate a user. 
+
 
 
 Elevator Pitch:
