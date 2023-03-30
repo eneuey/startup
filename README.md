@@ -18,6 +18,8 @@ From doing this assignment I have learned how to set envirnment variables on my 
 NOTES FROM SIMON LOGIN:
 By studying the code I have been able to gain a general idea of the process used to authenticate a user. 
 
+NOTES FROM SIMON WS:
+By studying the code for simon websockets I was suprised by how simple it was. By looking at the code I learned some of the syntax for working with websockets, and I also learned how to implement a pingpong function to keep the connection alive. 
 
 
 Elevator Pitch:
