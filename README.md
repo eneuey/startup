@@ -8,6 +8,8 @@ I learned how to create a repo and how to push and pull from it, as well as how 
 
 ![20230127_134614](https://user-images.githubusercontent.com/122322676/215194023-9445ce16-75c3-43d5-8e69-685200cc5bfd.jpg)
 
+NOTES FROM SIMON REACT:
+From studying the code for simon react I learned how to properly structure a react application. I noticed that Professor Jensen put each function in its own file. By studying the code I am also now more familiar with the syntax and conventions for react.
 
 NOTES FROM SIMON SERVICE:
 By studying the code for the simon service I have learned how to manipulate the DOM using data obtained through a fetch command, like what is done in the scores.js file. By studying the index.js file I now also have a better idea of how all the parts come together to make a functional web service.
