@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Play Online</title>
+    <title>Leader Board</title>
 
     <link rel="stylesheet" href="main.css" />
 
@@ -27,7 +27,7 @@
               <a class="nav-link" href="play.html">Play</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="online.html">Online</a>
+              <a class="nav-link active" href="scores.html">Leader Board</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index.html">Exit</a>
@@ -37,7 +37,19 @@
     </header>
 
     <main class="container-fluid text-center">
-      
+      <table class="table table-warning table-striped-columns">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>W/L Ratio</th>
+            <th>Wins</th>
+            <th>Losses</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="scores"></tbody>
+      </table>
     </main>
 
     <footer class="bg-dark text-dark text-muted">

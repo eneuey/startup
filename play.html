@@ -29,7 +29,7 @@
             <a class="nav-link active" href="play.html">Play</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="online.html">Online</a>
+            <a class="nav-link" href="scores.html">Leader Board</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="index.html">Exit</a>
@@ -50,16 +50,17 @@
       </div>
       <div class="board-holder">
         <div class="board">
-          <button class="square" id="zero" onclick="game.placeInSquareZero()"></button>
-          <button class="square" id="one" onclick="game.placeInSquareOne()"></button>
-          <button class="square" id="two" onclick="game.placeInSquareTwo()"></button>
-          <button class="square" id="three" onclick="game.placeInSquareThree()"></button>
-          <button class="square" id="four" onclick="game.placeInSquareFour()"></button>
-          <button class="square" id="five" onclick="game.placeInSquareFive()"></button>
-          <button class="square" id="six" onclick="game.placeInSquareSix()"></button>
-          <button class="square" id="seven" onclick="game.placeInSquareSeven()"></button>
-          <button class="square" id="eight" onclick="game.placeInSquareEight()"></button>
+          <button class="square" id="zero" onclick="game.placeInSquare('zero', 0)"></button>
+          <button class="square" id="one" onclick="game.placeInSquare('one', 1)"></button>
+          <button class="square" id="two" onclick="game.placeInSquare('two', 2)"></button>
+          <button class="square" id="three" onclick="game.placeInSquare('three', 3)"></button>
+          <button class="square" id="four" onclick="game.placeInSquare('four', 4)"></button>
+          <button class="square" id="five" onclick="game.placeInSquare('five', 5)"></button>
+          <button class="square" id="six" onclick="game.placeInSquare('six', 6)"></button>
+          <button class="square" id="seven" onclick="game.placeInSquare('seven', 7)"></button>
+          <button class="square" id="eight" onclick="game.placeInSquare('eight', 8)"></button>
         </div>
+        <button type="submit" class="btn btn-primary" id="play-button" onclick="newGame()">New Game</button>
       </div>
       <div class="player-info">
         <div class="info-container">

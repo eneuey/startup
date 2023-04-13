@@ -29,6 +29,8 @@ class Game {
         this.MBCounter = 2;
         this.SBCounter = 2;
 
+        this.winner = false;
+
         this.displayNames();
         this.displayCounts();
 
@@ -50,19 +52,21 @@ class Game {
         document.querySelector(".SBCounter").textContent = this.SBCounter;
     }
     nextTurn() {
-        if(this.playerTurn) {
-            const whiteTurn = document.querySelector("#whiteTurn");
-            removeAllChildNodes(whiteTurn);
-            const blackTurn = document.querySelector("#blackTurn");
-            blackTurn.textContent = "Your Turn!";
-            this.playerTurn = false;
-        }
-        else {
-            const blackTurn = document.querySelector("#blackTurn");
-            removeAllChildNodes(blackTurn);
-            const whiteTurn = document.querySelector("#whiteTurn");
-            whiteTurn.textContent = "Your Turn!";
-            this.playerTurn = true;
+        if(!this.CheckForWin()) {
+            if(this.playerTurn) {
+                const whiteTurn = document.querySelector("#whiteTurn");
+                removeAllChildNodes(whiteTurn);
+                const blackTurn = document.querySelector("#blackTurn");
+                blackTurn.textContent = "Your Turn!";
+                this.playerTurn = false;
+            }
+            else {
+                const blackTurn = document.querySelector("#blackTurn");
+                removeAllChildNodes(blackTurn);
+                const whiteTurn = document.querySelector("#whiteTurn");
+                whiteTurn.textContent = "Your Turn!";
+                this.playerTurn = true;
+            }
         }
     }
     selectLargeWhite() {
@@ -256,7 +260,7 @@ class Game {
                 delete prevLocation[this.swap.type];
                 if(Object.keys(prevLocation).length) {     //dispays piece that was under swapped piece
                     let piece = prevLocation[Object.keys(prevLocation)[Object.keys(prevLocation).length - 1]];
-                    console.log(this.swap);
+                    //console.log(this.swap);
                     this.placer(piece, this.swap.id);
                 }
                 this.swap = {};
@@ -264,76 +268,132 @@ class Game {
             }
         }
     }
-    placeInSquareZero() {
-        if(Object.keys(this.swap).length) {
-            this.swapper("zero", 0);
-        }
-        else {
-           this.squarePlacer("zero", 0); 
+    placeInSquare(word, num) { // example: word = "one" num = 0
+        if(!this.winner) {
+            if(Object.keys(this.swap).length) {
+                this.swapper(word, num);
+            }
+            else {
+            this.squarePlacer(word, num); 
+            }
         }
         
     }
-    placeInSquareOne() {
-        if(Object.keys(this.swap).length) {
-            this.swapper("one", 1);
+
+    getColor(index) {
+        if(Object.keys(this.board[index]).length) {
+            let squareData = this.board[index];
+            let keysList = Object.keys(squareData);
+            let piece = squareData[keysList[keysList.length - 1]];
+            let color = piece.className.substring(0, 5);
+            return color;
         }
-        else {
-            this.squarePlacer("one", 1);
-        }
+        return 'empty';
     }
-    placeInSquareTwo() {
-        if(Object.keys(this.swap).length) {
-            this.swapper("two", 2);
+
+    CheckForWin() {
+        let color0 = this.getColor(0);
+        let color1 = this.getColor(1);
+        let color2 = this.getColor(2);
+        let color3 = this.getColor(3);
+        let color4 = this.getColor(4);
+        let color5 = this.getColor(5);
+        let color6 = this.getColor(6);
+        let color7 = this.getColor(7);
+        let color8 = this.getColor(8);
+        let winner = false;
+        if(color0 != 'empty' && areEqual(color0, color1, color2)) {
+            winner = color0;
         }
-        else {
-            this.squarePlacer("two", 2);
-        }    }
-    placeInSquareThree() {
-        if(Object.keys(this.swap).length) {
-            this.swapper("three", 3);
+        if(color3 != 'empty' && areEqual(color3, color4, color5)) {
+            if(winner && winner !== color3) {
+                winner = 'tie';
+            }
+            if(winner !== 'tie') {
+                winner = color3;
+            }
+            
         }
-        else {
-            this.squarePlacer("three", 3);
-        }    }
-    placeInSquareFour() {
-        if(Object.keys(this.swap).length) {
-            this.swapper("four", 4);
+        if(color6 != 'empty' && areEqual(color6, color7, color8)) {
+            if(winner && winner !== color6) {
+                winner = 'tie';
+            }
+            if(winner !== 'tie') {
+                winner = color6;
+            }
         }
-        else {
-            this.squarePlacer("four", 4);
-        }    }
-    placeInSquareFive() {
-        if(Object.keys(this.swap).length) {
-            this.swapper("five", 5);
+        if(color0 != 'empty' && areEqual(color0, color3, color6)) {
+            if(winner && winner !== color0) {
+                winner = 'tie';
+            }
+            if(winner !== 'tie') {
+                winner = color0;
+            }
         }
-        else {
-            this.squarePlacer("five", 5);
-        }    }
-    placeInSquareSix() {
-        if(Object.keys(this.swap).length) {
-            this.swapper("six", 6);
+        if(color1 != 'empty' && areEqual(color1, color4, color7)) {
+            if(winner && winner !== color1) {
+                winner = 'tie';
+            }
+            if(winner !== 'tie') {
+                winner = color1;
+            }
         }
-        else {
-            this.squarePlacer("six", 6);
-        }    }
-    placeInSquareSeven() {
-        if(Object.keys(this.swap).length) {
-            this.swapper("seven", 7);
+        if(color2 != 'empty' && areEqual(color2, color5, color8)) {
+            if(winner && winner !== color2) {
+                winner = 'tie';
+            }
+            if(winner !== 'tie') {
+                winner = color2;
+            }
         }
-        else {
-            this.squarePlacer("seven", 7);
-        }    }
-    placeInSquareEight() {
-        if(Object.keys(this.swap).length) {
-            this.swapper("eight", 8);
+        if(color0 != 'empty' && areEqual(color0, color4, color8)) {
+            if(winner && winner !== color0) {
+                winner = 'tie';
+            }
+            if(winner !== 'tie') {
+                winner = color0;
+            }
         }
-        else {
-            this.squarePlacer("eight", 8);
-        }    }
+        if(color2 != 'empty' && areEqual(color2, color4, color6)) {
+            if(winner && winner !== color2) {
+                winner = 'tie';
+            }
+            if(winner !== 'tie') {
+                winner = color2;
+            }
+        }
+
+        //console.log(winner);
+        if(winner == "white") {
+            document.querySelector("#whiteTurn").textContent = "Winner! :)";
+            document.querySelector("#blackTurn").textContent = "Loser! :(";
+        }
+        if(winner == "black") {
+            document.querySelector("#blackTurn").textContent = "Winner! :)";
+            document.querySelector("#whiteTurn").textContent = "Loser! :(";
+        }
+        if(winner == 'tie') {
+            document.querySelector("#blackTurn").textContent = "Tie!";
+            document.querySelector("#whiteTurn").textContent = "Tie!";
+        }
+        if(winner) {
+            this.winner = true;
+            return true;
+        }
+        return false;
+    }
 
 }
 
-const game = new Game();
+let game = new Game();
+
+function newGame() {
+    game = new Game();
+    removeAllChildNodes(document.querySelector("#whiteTurn"));
+    removeAllChildNodes(document.querySelector("#blackTurn"))
+    document.querySelector("#whiteTurn").textContent = "Your Turn!";
+    document.querySelectorAll(".square").forEach(element => removeAllChildNodes(element));
+}
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
@@ -352,3 +412,13 @@ function numify(letters) {
         return 1;
     }
 }
+
+function areEqual(){
+    var len = arguments.length;
+    for (var i = 1; i< len; i++){
+       if (arguments[i] === null || arguments[i] !== arguments[i-1])
+          return false;
+    }
+    return true;
+ }
+
