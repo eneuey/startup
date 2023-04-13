@@ -20,7 +20,7 @@ body {
   }
   #play-button{
     width: 140px;
-    margin: 7px;
+    margin: 20px;
   }
   header {
     flex: 0 80px;
@@ -174,6 +174,19 @@ body {
   
   .player-name {
     color: rgb(0, 0, 0);
+  }
+
+  #quote {
+    background-color: darkgray;
+    border-radius: 7px;
+    padding: 1px;
+    margin: 10px;
+  }
+
+  .Norris {
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: sans-serif;
   }
   
   
