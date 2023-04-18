@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const DB = require('./database.js');
 
 // The service port. In production the application is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
@@ -13,6 +14,31 @@ app.use(express.static('public'));
 // Router for service endpoints
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
+
+// GetScores
+apiRouter.get('/scores', async (_req, res) => {
+    const scores = await DB.getHighScores();
+    res.send(scores);
+  });
+  
+  // SubmitScore
+  apiRouter.post('/score', async (req, res) => {
+    if(await DB.hasPlayer(req.body.name)) {
+        DB.updateScore(req.body.name, req.body.outcome);
+    }
+    else {
+        if(req.body.outcome) {
+            await DB.addScore({name: req.body.name, wins: 1, losses: 0});
+        }
+        else {
+            await DB.addScore({name: req.body.name, wins: 0, losses: 1});
+
+        }
+        
+    }
+    const scores = await DB.getHighScores();
+    res.send(scores);
+  });
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {

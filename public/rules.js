@@ -37,3 +37,24 @@ function NorrisDisplay(data) {
 }
 
 NorrisDisplay()
+
+// function dadDisplay(data) {
+//     fetch('https://dad-jokes.p.rapidapi.com/random/joke')
+//       .then((response) => response.json())
+//       .then((data) => {
+//         const containerEl = document.querySelector('#quote');
+  
+//         const quoteEl = document.createElement('p');
+//         quoteEl.classList.add('quote');
+//         const authorEl = document.createElement('p');
+//         authorEl.classList.add('author');
+  
+//         quoteEl.textContent = data.setup;
+//         authorEl.textContent = data.punchline;
+  
+//         containerEl.appendChild(quoteEl);
+//         containerEl.appendChild(authorEl);
+//     });
+// }
+
+// dadDisplay()
